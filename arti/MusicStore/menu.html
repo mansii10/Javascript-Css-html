@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    .menu {
+        width: 100%;
+        padding: 0 15px;
+        background: #303030;
+        text-align: center;
+        display: none;
+    }
+
+    .mobilemenu {
+        width: 100%;
+        padding: 0 15px;
+        background: #303030;
+        height:
+    }
+
+    .menu ul {
+        display: inline-block;
+    }
+
+    .menu li {
+        margin: 0 50px 0 0;
+        float: left;
+        list-style: none;
+        font-size: 17px;
+    }
+
+    .menu a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .menu a:hover, .menu .current-item a {
+        text-decoration: none;
+        color: rgba(233, 244, 252, 0.01);
+    }
+
+    #hamburgericon {
+        height:15px;
+        width:15px;
+
+    }
+    #searchicon {
+        height:15px;
+        width:15px;
+        float:right;
+    }
+
+</style>
+<body>
+<nav class="menu">
+    <ul>
+        <li><a href="#">mymusic</a></li>
+        <li><a href="#">playlist</a></li>
+        <li><a href="#">new</a></li>
+        <li><a href="#">explore</a></li>
+        <li class="icon"><a href="#" ><img style="height:15px; width:15px" src="Images/search.png"  /></a></li>
+    </ul>
+</nav>
+<nav class="mobilemenu">
+    <img id="hamburgericon" src="Images/hamburger-icon.png" />
+    <img id="searchicon" src="Images/search.png"  />
+</nav>
+</body>
+</html>

@@ -1,0 +1,188 @@
+/*Last Update with AKhi 10 april*/
+body {
+    background-color: #1D1F22;
+}
+
+.menu {
+    width: 100%;
+    padding: 0 15px;
+    background: #303030;
+    text-align: center;
+}
+
+.menu ul {
+    display: inline-block;
+}
+
+.menu li {
+    margin: 0 50px 0 0;
+    float: left;
+    list-style: none;
+    font-size: 17px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu a:hover, .menu .current-item a {
+    text-decoration: none;
+    color: rgba(233, 244, 252, 0.01);
+}
+@media screen and (min-width: 592px) {
+    #main {
+        border: 1px solid red;
+        clear: both;
+        width: 592px;
+    }
+    #main1 {
+        border: 1px solid blue;
+        margin-right: 264px;
+        width: 320px;
+    }
+    .sidebar {
+        width: 256px;
+        border: 1px solid yellow;
+        float: right;
+        display: inline;
+    }
+}
+@media screen and (min-width: 960px) {
+    #main {
+        border: 1px solid red;
+        clear: both;
+        width: 960px;
+    }
+    #main1 {
+        border: 1px solid blue;
+        margin-right: 264px;
+        width: 680px;
+    }
+    .sidebar {
+        width: 256px;
+        border: 1px solid yellow;
+        float: right;
+        display: inline;
+    }
+}
+.top {
+    width: 320px;
+    padding: 0;
+    display: inline-block;
+    margin: 8px;
+}
+
+.imgheader {
+    color: #0294D3;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    padding: 0 8px 0 8px;
+    margin-bottom: 6px;
+
+}
+
+.pic img {
+    width: 305px;
+    height: 140px;
+    box-shadow: 0 0 1em 8px black;
+    margin: 8px;
+}
+
+.text {
+    color: #B9B9B9;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    padding: 0 8px 0 8px;
+}
+
+body {
+    background-color: #1D1F22;
+}
+
+#headerSide {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    color: #ABACAD;
+}
+
+hr {
+    color: #252729
+}
+
+.sidebarentry {
+    width: 256px;
+    height: 44px;
+    /*border:1px solid yellow;*/
+    margin: 10px 0 10px 0;
+    padding: 0;
+
+}
+
+.topsongsimg {
+    /*
+    border: 1px solid white;
+    */
+    /*display: inline-block;*/
+    width: 44px;
+    height: 44px;
+    float: left;
+
+}
+
+.topsongsimg img {
+    border-radius: 22px;
+    /*border: 1px solid darkblue;*/
+    width: 44px;
+    height: 44px;
+}
+
+.songdetails {
+    /*display: inline-block;*/
+    height: 44px;
+    padding-left: 53px;
+    margin: 0;
+    /*border: 1px solid lightseagreen;*/
+
+    /*  float:left;*/
+
+}
+
+.songtitle {
+    /*border:1px solid green;*/
+    color: #0294D3;
+
+}
+
+.artist {
+    /*
+    display:block;
+    */
+    /* border:1px solid red;*/
+    color: #B9B9B9;
+}
+
+.clear {
+    clear: both
+}
+
+#footer {
+    text-align: center;
+}
+
+#footer ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 20px 0 0;
+}
+
+#footer li {
+    color: white;
+    font-size: 14px;
+}
+
+#footer a {
+    font-size: 14px;
+    color: #0294D3;
+    text-decoration: none;
+}
