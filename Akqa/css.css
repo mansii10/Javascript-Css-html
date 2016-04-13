@@ -3,6 +3,7 @@ body {
     margin:0;
     padding:0;
 }
+
 body > div {
     display: flex;
     flex-flow:row wrap;
@@ -44,6 +45,7 @@ body > div:nth-child(1)  > footer {order:4; height:100px; flex:0 1 100%}
     text-decoration: none;
     color: rgba(233, 244, 252, 0.01);
 }
+
 /*Main Css*/
 
 #main1 {
@@ -67,7 +69,6 @@ body > div:nth-child(1)  > footer {order:4; height:100px; flex:0 1 100%}
     font-size: 18px;
     padding: 0 8px 0 8px;
     margin-bottom: 6px;
-
 }
 
 .pic img {
