@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="base.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.43/jquery.form-validator.min.js"></script>
+</head>
+<body>
+    <div class="loginPage">
+        <fieldset>
+            <legend>Personal information:</legend>
+            <form id="form">
+                <ul class="field" >
+                    <li>
+                        <label>Username</label>
+                        <div class="i">
+                            <input type="text" data-validation="email" data-validation-length="max56" placeholder="test@apple.com" maxlength="56" />
+                        </div>
+                    </li>
+                    <li>
+                        <label>Password</label>
+                        <div class="i">
+                            <input name="pass_confirmation" data-validation="length" data-validation-length="min6" />
+                        </div>
+                    </li>
+                    <li>
+                        <label>Confirm password</label>
+                        <div class="i">
+                            <input name="pass" data-validation="confirmation" />
+                        </div>
+                    </li>
+                    <li>
+                        <label>First Name</label>
+                        <div class="i">
+                            <input type="text" multiple="multiple" data-validation="alphanumeric" data-validation-length="max50" placeholder="Last Name" />
+                        </div>
+                    </li>
+                    <li>
+                        <label>Last Name</label>
+                        <div class="i">
+                            <input type="text" multiple="multiple" data-validation="alphanumeric" data-validation-length="max50" placeholder="First Name" />
+                        </div>
+                    </li>
+                    <li>
+                        <label>Date Of Birth</label>
+                        <div class="i">
+                            <input type="text" data-validation="signin_birthdate" data-validation-format="dd/mm/yyyy">
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <input type="submit" value="Submit"  />
+                        </div>
+                    </li>
+                </ul>
+            </form>
+        </fieldset>
+    </div>
+
+
+</body>
+<script>
+    $.formUtils.addValidator({
+        //TODO: Exact Birth Date
+        name: "signin_birthdate",
+        validatorFunction: function(val, $el, conf) {
+            var dateFormat = "dd/mm/yyyy";
+            if ($el.valAttr("format")) {
+                dateFormat = $el.valAttr("format")
+            } else if (typeof conf.dateFormat != "undefined") {
+                dateFormat = conf.dateFormat
+            }
+            var inputDate = $.formUtils.parseDate(val, dateFormat);
+            if (!inputDate) {
+                return false
+            }
+            var d = new Date;
+            var currentYear = d.getFullYear();
+            var year = inputDate[0];
+            var month = inputDate[1];
+            var day = inputDate[2];
+            if (year === currentYear) {
+                var currentMonth = d.getMonth() + 1;
+                if (month === currentMonth) {
+                    var currentDay = d.getDate();
+                    return day <= currentDay
+                } else {
+                    return month < currentMonth
+                }
+            } else {
+                return year < currentYear - 14 && year > currentYear - 151
+            }
+        },
+        errorMessage: "",
+        errorMessageKey: "badDate"
+        });
+
+        $.validate({
+            modules : 'date, security'
+        });
+
+            var errors = [],
+
+        // Validation configuration
+                    conf = {
+                        onElementValidate : function(valid, $el, $form, errorMess) {
+                            if( !valid ) {
+                                // gather up the failed validations
+                                errors.push({el: $el, error: errorMess});
+                            }
+                        }
+                    },
+
+        // Optional language object
+                    lang = {  };
+
+
+    $("#form").on('submit', function(e) {
+        errors = [];
+        if( !$(this).isValid(undefined, conf, false) ) {
+           alert( errors );
+        } else {
+            alert("The form is valid");
+
+            // Submit the form using Ajax here.
+            var formData = {};
+            // Fill in various parameters for formData.
+            $.post("/registerUser.php", formData).done(function (data) {
+
+            }).fail(function () {
+
+            });
+        }
+    });
+
+
+
+
+
+</script>
+
+
+
+</html>

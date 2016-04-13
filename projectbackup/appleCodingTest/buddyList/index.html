@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>buddy List</title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'>
+    <link href='style.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="site-container">
+    <header class="site-header">
+        <a href="/" class="header-logo fancy">( Buddy List )</a>
+    </header>
+
+    <h1 class="fancy">Buddy List</h1>
+
+    <div id="filters">
+        <a href="#" class="btn btn-default btn-active" data-filter="all" >All</a>
+        <a href="#" class="btn btn-default" >UserName</a>
+        <a href="#" class="btn btn-default"  >FirstName</a>
+        <a href="#" class="btn btn-default" >LastName</a>
+        <a href="#" class="btn btn-default"  >Status</a>
+        <p id="demo"></p>
+    </div>
+
+    <ul id="friendsList"></ul>
+
+    <script type="text/json" id="friendsData">
+
+        {
+            "friends": [
+                {"userName": "arti","firstName": "shirbhate", "lastName": "shirbhate", "status": online},
+                {"userName": "Rohan","firstName": "shee", "lastName": "rajeshwar", "status": online},
+                {"userName": "prasad","firstName": "prasad", "lastName": "nighun", "status": offline},
+                {"userName": "krish","firstName": "krish", "lastName": "batra", "status": offline},
+                {"userName": "sumedh","firstName": "sumer", "lastName": "Rajwansh", "status": online},
+                {"userName": "mayank10","firstName": "mayank", "lastName": "churasia", "status": offline},
+                {"userName": "willys","firstName": "willy", "lastName": "crow", "status": online},
+            ]
+        }
+        </script>
+</div>
+
+
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

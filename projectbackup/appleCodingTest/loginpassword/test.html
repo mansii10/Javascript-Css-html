@@ -1,0 +1,669 @@
+<html>
+
+<head>
+
+    <title>JavaScript Subscription Wizard Example</title>
+
+    <script type="text/javascript">
+
+
+
+        // This function handles style and display changes for each next button click
+
+        function handleWizardNext()
+
+        {
+
+            if (document.getElementById('ButtonNext').name == 'Step2')
+
+            {
+
+                // Change the button name - we use this to keep track of which step to display on a click
+
+                document.getElementById('ButtonNext').name = 'Step3';
+
+                document.getElementById('ButtonPrevious').name = 'Step1';
+
+                // Disable/enable buttons when reach reach start and review steps
+
+                document.getElementById('ButtonPrevious').disabled = '';
+
+                // Set new step to display and turn off display of current step
+
+                document.getElementById('Step1').style.display = 'none';
+
+                document.getElementById('Step2').style.display = '';
+
+                // Change background color on header to highlight new step
+
+                document.getElementById('HeaderTableStep2').style.backgroundColor = 'Yellow';
+
+                document.getElementById('HeaderTableStep1').style.backgroundColor = 'Silver';
+
+            }
+
+            else if (document.getElementById('ButtonNext').name == 'Step3')
+
+            {
+
+                // Change the button name - we use this to keep track of which step to display on a click
+
+                document.getElementById('ButtonNext').name = 'Step4';
+
+                document.getElementById('ButtonPrevious').name = 'Step2';
+
+                document.getElementById('Step2').style.display = 'none';
+
+                document.getElementById('Step3').style.display = '';
+
+                // Change background color on header to highlight new step
+
+                document.getElementById('HeaderTableStep3').style.backgroundColor = 'Yellow';
+
+                document.getElementById('HeaderTableStep2').style.backgroundColor = 'Silver';
+
+            }
+
+            else if (document.getElementById('ButtonNext').name == 'Step4')
+
+            {
+
+                // Change the button name - we use this to keep track of which step to display on a click
+
+                document.getElementById('ButtonNext').name = 'Step5';
+
+                document.getElementById('ButtonPrevious').name = 'Step3';
+
+                // Set new step to display and turn off display of current step
+
+                document.getElementById('Step3').style.display = 'none';
+
+                document.getElementById('Step4').style.display = '';
+
+                // Change background color on header to highlight new step
+
+                document.getElementById('HeaderTableStep4').style.backgroundColor = 'Yellow';
+
+                document.getElementById('HeaderTableStep3').style.backgroundColor = 'Silver';
+
+            }
+
+            else if (document.getElementById('ButtonNext').name == 'Step5')
+
+            {
+
+                // Change the button name - we use this to keep track of which step to display on a click
+
+                document.getElementById('ButtonNext').name = '';
+
+                document.getElementById('ButtonPrevious').name = 'Step4';
+
+                // Disable/enable buttons when reach reach start and review steps
+
+                document.getElementById('ButtonNext').disabled = 'disabled';
+
+                document.getElementById('SubmitFinal').disabled = '';
+
+                // Set new step to display and turn off display of current step
+
+                document.getElementById('Step4').style.display = 'none';
+
+                document.getElementById('Step5').style.display = '';
+
+                // Change background color on header to highlight new step
+
+                document.getElementById('HeaderTableStep5').style.backgroundColor = 'Yellow';
+
+                document.getElementById('HeaderTableStep4').style.backgroundColor = 'Silver';
+
+                // Load table elements for final review step
+
+                loadStep5Review();
+
+            }
+
+        }
+
+
+
+        // This function handles style and display changes for each previous button click
+
+        function handleWizardPrevious()
+
+        {
+
+            if (document.getElementById('ButtonPrevious').name == 'Step1')
+
+            {
+
+                // Change the button name - we use this to keep track of which step to display on a click
+
+                document.getElementById('ButtonNext').name = 'Step2';
+
+                document.getElementById('ButtonPrevious').name = '';
+
+                // Disable/enable buttons when reach reach start and review steps
+
+                document.getElementById('ButtonPrevious').disabled = 'disabled';
+
+                // Set new step to display and turn off display of current step
+
+                document.getElementById('Step2').style.display = 'none';
+
+                document.getElementById('Step1').style.display = '';
+
+                // Change background color on header to highlight new step
+
+                document.getElementById('HeaderTableStep1').style.backgroundColor = 'Yellow';
+
+                document.getElementById('HeaderTableStep2').style.backgroundColor = 'Silver';
+
+            }
+
+            else if (document.getElementById('ButtonPrevious').name == 'Step2')
+
+            {
+
+                // Change the button name - we use this to keep track of which step to display on a click
+
+                document.getElementById('ButtonNext').name = 'Step3';
+
+                document.getElementById('ButtonPrevious').name = 'Step1';
+
+                // Set new step to display and turn off display of current step
+
+                document.getElementById('Step3').style.display = 'none';
+
+                document.getElementById('Step2').style.display = '';
+
+                // Change background color on header to highlight new step
+
+                document.getElementById('HeaderTableStep2').style.backgroundColor = 'Yellow';
+
+                document.getElementById('HeaderTableStep3').style.backgroundColor = 'Silver';
+
+            }
+
+            else if (document.getElementById('ButtonPrevious').name == 'Step3')
+
+            {
+
+                // Change the button name - we use this to keep track of which step to display on a click
+
+                document.getElementById('ButtonNext').name = 'Step4';
+
+                document.getElementById('ButtonPrevious').name = 'Step2';
+
+                // Set new step to display and turn off display of current step
+
+                document.getElementById('Step4').style.display = 'none';
+
+                document.getElementById('Step3').style.display = '';
+
+                // Change background color on header to highlight new step
+
+                document.getElementById('HeaderTableStep3').style.backgroundColor = 'Yellow';
+
+                document.getElementById('HeaderTableStep4').style.backgroundColor = 'Silver';
+
+            }
+
+            else if (document.getElementById('ButtonPrevious').name == 'Step4')
+
+            {
+
+                // Change the button name - we use this to keep track of which step to display on a click
+
+                document.getElementById('ButtonNext').name = 'Step5';
+
+                document.getElementById('ButtonPrevious').name = 'Step3';
+
+                // Disable/enable buttons when reach reach start and review steps
+
+                document.getElementById('ButtonNext').disabled = '';
+
+                document.getElementById('SubmitFinal').disabled = 'disabled';
+
+                // Set new step to display and turn off display of current step
+
+                document.getElementById('Step5').style.display = 'none';
+
+                document.getElementById('Step4').style.display = '';
+
+                // Change background color on header to highlight new step
+
+                document.getElementById('HeaderTableStep4').style.backgroundColor = 'Yellow';
+
+                document.getElementById('HeaderTableStep5').style.backgroundColor = 'Silver';
+
+            }
+
+        }
+
+
+
+        // This function handles loading the review table innerHTML for the user to review before final submission
+
+        function loadStep5Review()
+
+        {
+
+            // Assign values to appropriate cells in review table
+
+            document.getElementById('ReviewFirstName').innerHTML = document.getElementById('TextFirstName').value;
+
+            document.getElementById('ReviewMiddleName').innerHTML = document.getElementById('TextMiddleName').value;
+
+            document.getElementById('ReviewLastName').innerHTML = document.getElementById('TextLastName').value;
+
+            document.getElementById('ReviewEmail').innerHTML = document.getElementById('TextEmail').value;
+
+            // Indicate Yes or No based on subscription checkbox checked
+
+            if (document.getElementById('CheckboxHtmlGoodies').checked == 1)
+
+            {
+
+                document.getElementById('ReviewHtmlGoodies').innerHTML = 'Yes';
+
+            }
+
+            else
+
+            {
+
+                document.getElementById('ReviewHtmlGoodies').innerHTML = 'No';
+
+            }
+
+            if (document.getElementById('CheckboxJavaScript').checked == 1)
+
+            {
+
+                document.getElementById('ReviewJavaScript').innerHTML = 'Yes';
+
+            }
+
+            else
+
+            {
+
+                document.getElementById('ReviewJavaScript').innerHTML = 'No';
+
+            }
+
+            if (document.getElementById('CheckboxWdvl').checked == 1)
+
+            {
+
+                document.getElementById('ReviewWdvl').innerHTML = 'Yes';
+
+            }
+
+            else
+
+            {
+
+                document.getElementById('ReviewWdvl').innerHTML = 'No';
+
+            }
+
+            // Special case to display password as asterisks
+
+            var iCounter = 1;
+
+            var iCharacterCount = document.getElementById('TextPassword').value.length;
+
+            var passwordMasked = '';
+
+            for (iCounter = 1; iCounter <= iCharacterCount; iCounter++)
+
+            {
+
+                passwordMasked = passwordMasked + '*';
+
+            }
+
+            document.getElementById('ReviewPassword').innerHTML = passwordMasked;
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<form id="SubscriptionWizard" action="" method="post">
+
+    <table border="1" cellpadding="5" cellspacing="0" id="HeaderTable">
+
+        <tr>
+
+            <td id="HeaderTableStep1" style="background-color:Yellow">
+
+                Step 1: Getting Started</td>
+
+            <td id="HeaderTableStep2" style="background-color:Silver">
+
+                Step 2: Name</td>
+
+            <td id="HeaderTableStep3" style="background-color:Silver">
+
+                Step 3:&nbsp; Account Access</td>
+
+            <td id="HeaderTableStep4" style="background-color:Silver">
+
+                Step 4: Select subscriptions</td>
+
+            <td id="HeaderTableStep5" style="background-color:Silver">
+
+                Step:5 Finalize &amp; Submit</td>
+
+        </tr>
+
+    </table>
+
+    <br />
+
+<span id="Step1"><strong>
+
+    Welcome to our Subscription Wizard!<br />
+
+</strong>
+
+        <br />
+
+    This wizard simulates subscribing for access to website content. Each step is highlighted in the header. 
+
+    <br />
+
+    This step is intended to provide the user with everything they need to know to get started.
+
+    <br />
+
+</span>
+
+<span id="Step2" style="display:none">
+
+    <table border="0" cellpadding="5" cellspacing="0">
+
+        <tr>
+
+            <td align="right">
+
+                First name:</td>
+
+            <td>
+
+                <input id="TextFirstName" name="FirstName" type="text" /></td>
+
+        </tr>
+
+        <tr>
+
+            <td align="right">
+
+                Middle name:</td>
+
+            <td>
+
+                <input id="TextMiddleName" name="MiddleName" type="text" /></td>
+
+        </tr>
+
+        <tr>
+
+            <td align="right">
+
+                Last name:</td>
+
+            <td>
+
+                <input id="TextLastName" name="LastName" type="text" /></td>
+
+        </tr>
+
+    </table>
+
+</span>
+
+<span id="Step3" style="display:none">
+
+    <table border="0" cellpadding="5" cellspacing="0">
+
+        <tr>
+
+            <td align="right">
+
+                Email:</td>
+
+            <td>
+
+                <input id="TextEmail" name="Email" type="text" /></td>
+
+        </tr>
+
+        <tr>
+
+            <td align="right">
+
+                Password:</td>
+
+            <td>
+
+                <input id="TextPassword" name="Password" type="password" /></td>
+
+        </tr>
+
+    </table>
+
+</span>
+
+<span id="Step4" style="display:none">
+
+    <table border="0" cellpadding="5" cellspacing="0">
+
+        <tr>
+
+            <td align="left" colspan="2">
+
+                <strong>
+
+                    Select your subscription:</strong></td>
+
+        </tr>
+
+        <tr>
+
+            <td align="right">
+
+                HtmlGoodies.com:</td>
+
+            <td>
+
+                <input id="CheckboxHtmlGoodies" name="CheckboxHtmlGoodies" type="checkbox" value="Yes" /></td>
+
+        </tr>
+
+        <tr>
+
+            <td align="right">
+
+                JavaScript.com:</td>
+
+            <td>
+
+                <input id="CheckboxJavaScript" name="CheckboxJavaScript" type="checkbox" value="Yes" /></td>
+
+        </tr>
+
+        <tr>
+
+            <td align="right">
+
+                wdvl.com</td>
+
+            <td>
+
+                <input id="CheckboxWdvl" name="CheckboxWdvl" type="checkbox" value="Yes" /></td>
+
+        </tr>
+
+    </table>
+
+</span>
+
+<span id="Step5" style="display:none">
+
+    <table border="0" cellpadding="5" cellspacing="0">
+
+        <tr>
+
+            <td colspan="2">
+
+                <strong>Final Review:</strong></td>
+
+        </tr>
+
+        <tr>
+
+            <td align="right">
+
+                First name:</td>
+
+            <td id="ReviewFirstName">
+
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td align="right">
+
+                Middle name:</td>
+
+            <td id="ReviewMiddleName">
+
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td align="right">
+
+                Last name:</td>
+
+            <td id="ReviewLastName">
+
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td align="right">
+
+                Email:</td>
+
+            <td id="ReviewEmail">
+
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td align="right">
+
+                Password:</td>
+
+            <td id="ReviewPassword">
+
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td align="left">
+
+                <strong>
+
+                    Subscribed to:</strong></td>
+
+            <td>
+
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td align="right">
+
+                HtmlGoodies.com:</td>
+
+            <td id="ReviewHtmlGoodies">
+
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td align="right">
+
+                JavaScript.com:</td>
+
+            <td id="ReviewJavaScript">
+
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td align="right">
+
+                wdvl.com:</td>
+
+            <td id="ReviewWdvl">
+
+            </td>
+
+        </tr>
+
+    </table>
+
+</span>
+
+    <br />
+
+    <table border="0" cellpadding="5" cellspacing="0">
+
+        <tr>
+
+            <td>
+
+                <input id="ButtonPrevious" type="button" value="Previous" disabled="disabled" name="" onclick="handleWizardPrevious()" /></td>
+
+            <td>
+
+                <input id="ButtonNext" type="button" value="Next" name="Step2" onclick="handleWizardNext()" /></td>
+
+            <td>
+
+                <input id="SubmitFinal" type="submit" value="Finish" disabled="disabled" /></td>
+
+        </tr>
+
+    </table>
+
+</form>
+
+</body>
+
+</html>

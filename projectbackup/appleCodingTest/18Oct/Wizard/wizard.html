@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<fieldset>
+    <legend>Subscription:</legend>
+    <form action="" method="post">
+        <table border="1" cellpadding="5" cellspacing="0" id="tr">
+            <tr>
+                <td id="trStep1">Step 1:Subscribe</td>
+                <td id="trStep2"> Step 2: Light</td>
+                <td id="trStep3"> Step 3: Standard</td>
+                <td id="trStep4"> Step 4: Plus</td>
+                <td id="trStep5"> Step 5: Premium and review you Services</td>
+            </tr>
+        </table>
+        <br />
+                <span id="Step1">
+                    <strong>Please Follow step-by-step process to subscribe</strong>
+                </span>
+
+                <span id="Step2" style="display:none" >
+                    <table border="0" cellpadding="5" cellspacing="0">
+                        <tr>
+                            <td>User Name:</td>
+                            <td><input id="usrName" name="userName" type="text"/></td>
+                        </tr>
+                        <tr>
+                            <td>First Name:</td>
+                            <td><input id="fstName" name="firstName" type="text"/></td>
+                        </tr>
+                        <tr>
+                            <td>Last Name:</td>
+                            <td><input id="lstName" name="lastName" type="text"/></td>
+                        </tr>
+                        <tr>
+                            <td>Email Id:</td>
+                            <td><input id="mailId" name="emailId" type="text"/></td>
+                        </tr>
+                    </table>
+                </span>
+
+                <span id="Step3" style="display:none" >
+                    <table border="0" cellpadding="5" cellspacing="0" >
+                        <tr>
+                            <td> <h4>Please Login Standard account holder.</h4></td>
+                        </tr>
+                        <tr>
+                            <td> Email id:</td>
+                            <td><input id="txtEmail" name="Email" type="email"/></td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td><input id="txtPass" name= "password" type="password"/></td>
+                        </tr>
+                    </table>
+                </span>
+                <span id="Step4" style="display:none">
+                    <table border="0" cellpadding="5" cellspacing="0">
+                        <tr>
+                            <td colspan="2"><h3>Please select four or more  to become Plus Member.</h3> </td>
+                        </tr>
+                        <tr>
+                            <td >One Month Subscription </td>
+                            <td><input id="ckBoxOne" name="ckBoxOne" type="checkbox" value="yes" /></td>
+                        </tr>
+                        <tr>
+                            <td>Two Month Subscription</td>
+                            <td><input id="ckBoxTwo" name="ckBoxTwo" type="checkbox" value="yes" /></td>
+                        </tr>
+                        <tr>
+                            <td>Three Month Subscription</td>
+                            <td><input id="ckBoxThree" name="ckBoxThree" type="checkbox" value="yes" /></td>
+                        </tr>
+                        <tr>
+                            <td>four Month Subscription</td>
+                            <td><input id="ckBoxFour" name="ckBoxFour" type="checkbox" value="yes" /></td>
+                        </tr>
+                    </table >
+                </span>
+                <span id="Step5" style="display:none">
+                    <table border="0" cellpadding="5" cellspacing="0">
+                        <tr>
+                            <td colspan="2"><h3>Welcome <span id="custType"></span> member.Please review your subscription</h3></td>
+                        </tr>
+                        <tr>
+                            <td align="right" id="reviewUserName" >User Name:</td>
+                        </tr>
+                        <tr>
+                            <td align="right" id="reviewPassword">Password:</td>
+                        </tr>
+                        <tr>
+                            <td align="right" id="reviewFirstName">First Name:</td>
+                        </tr>
+                        <tr>
+                            <td align="right" id="reviewLastName">Last Name:</td>
+                        </tr>
+                        <tr align="left">
+                            <td><h3>Your Subscription</h3></td>
+                        </tr>
+                        <tr align="right">
+                            <td>One Month:</td>
+                            <td id="reviewFirstMnt"></td>
+                        </tr>
+                        <tr align="right">
+                            <td>Two Month:</td>
+                            <td id="reviewSecondMnt"></td>
+                        </tr>
+                        <tr align="right">
+                            <td>Three Month:</td>
+                            <td id="reviewThirdMnt"></td>
+                        </tr>
+                        <tr align="right">
+                            <td>Four Month:</td>
+                            <td id="reviewFourthMnt"></td>
+                        </tr>
+                    </table>
+                </span>
+        <br />
+        <table border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td>
+                    <input id="btnPrevious" type="button" value="Previous" disabled="disabled" name="" onclick="previousWizard()" /></td>
+                <td>
+                    <input id="btnNext" type="button" value="Next" name="Step2" onclick="nextWizard()" /></td>
+                <td>
+                    <input id="btnLast" type="submit" value="Finish" disabled="disabled" /></td>
+            </tr>
+        </table>
+    </form>
+</fieldset>
+</body>
+</html>

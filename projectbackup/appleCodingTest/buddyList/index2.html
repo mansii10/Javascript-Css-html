@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Functional JS</title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'>
+    <link href='style.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div class="site-container">
+        <header class="site-header">
+            <a href="/" class="header-logo fancy">( Buddy List )</a>
+        </header>
+
+        <h1 class="fancy">friends List</h1>
+        <div id="filters">
+            <a href="#" class="btn btn-default btn-active" data-filter="all">All</a>
+            <a href="#" class="btn btn-default" data-filter="username">User Name</a>
+            <a href="#" class="btn btn-default" data-filter="firstName">First Name</a>
+            <a href="#" class="btn btn-default" data-filter="lastName">Last Name</a>
+            <a href="#" class="btn btn-default" data-filter="status">Online</a>
+        </div>
+
+        <ul id="friendsList"></ul>
+
+
+    </div>
+    <script type="text/json" id="friendsData">
+            {
+                "friendss": [
+                    {"username": "mansi", "firstName": "Mansi", "lastName": "Shirbhate",  "status": "offline"},
+                    {"username": "krish12", "firstName": "Krish", "lastName": "Badao",  "status": "online"},
+                    {"username": "asan21", "firstName": "lager", "lastName": "patil","status": "offline"},
+                    {"username": "Astha", "firstName": "stout", "lastName": "chaudhry", "status": "online"},
+                    {"username": "chris", "firstName": "ipa", "lastName": "hemel", "status": "offline"},
+                    {"username": "simon21", "firstName": "ale", "lastName": "tone", "status": "online"},
+                    {"username": "kate23", "firstName": "ale", "lastName": "willy", "status": "online"},
+                    {"username": "Samwell23", "firstName": "stout", "lastName": "cruz", "status": "offline"},
+                    {"username": "Alenig", "firstName": "ale", "lastName": "kliper", "status": "online"},
+                    {"username": "sonu21", "firstName": "lager", "lastName": "Raut", "status": "offline"},
+                    {"username": "Zaroon2", "firstName": "lager", "lastName": "zin",  "status": "online"},
+                    {"username": "hero22", "firstName": "ale", "lastName": "heri",  "status": "online"}
+                ]
+            }
+            </script>
+
+    <script type="text/template" id="tmpl-friends">
+        <% _.forEach(friendss, function (friends) { %>
+        <li><%= friends.username %></li>
+        <% }); %>
+    </script>
+
+
+<script src="https://rawgit.com/lodash/lodash/3.0.1/lodash.min.js"></script>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="script2.js"></script>
+
+</body>
+</html>

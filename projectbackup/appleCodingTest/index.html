@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css.css">
+    <script src="script.js" ></script>
+    <script src="http://beshur.github.io/res/validate/validate.js"></script>
+
+</head>
+
+<body>
+<div class="form_wrap">
+    <form id="form">
+        <ul class="field">
+            <li>
+                <label>Username:<em>*</em></label>
+                <div class="i">
+                     <input type="text" data-validate="email" placeholder="test@apple.com" maxlength="56" />
+                </div>
+            </li>
+            <li>
+                <label>Password:<em>*</em></label>
+                <div class="i">
+                    <input type="password" data-validate="length" data-pass-one="true" placeholder="Password" minlength="6" />
+                </div>
+            </li>
+            <li>
+                <label>First Name And Last Name:</label>
+                <div class="i">
+                    <input type="text" name="First Name" />
+                    <span>
+                        <input type="text" name="Last Name" />
+                    </span>
+                </div>
+            </li>
+           <li>
+               <label>Date Of Birth<em>*</em></label>
+                <div class="i">
+                    <input type="text" data-validate="birth" placeholder="31-12-1900" />
+
+                </div>
+            </li>
+            <li>
+                <div >
+                    <button type="submit"> Submit</button>
+                </div>
+            </li>
+        </ul>
+
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+form {
+    padding: 10px;
+}
+form .fields li {
+    margin: 0 0 15px;
+}
+label em { color: red; }
+.err_string {
+    margin: 0 4px;
+    font-size: 12px;
+    color: red;
+
+}
+
+.i {
+    padding: 5px 0;
+}
+input.error {
+    border-color: red;
+}
+
+small {
+    font-size: 12px;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}

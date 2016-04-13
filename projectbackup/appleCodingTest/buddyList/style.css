@@ -1,0 +1,55 @@
+body {
+
+}
+
+a:link, a:hover, a:active, a:visited {
+    color: #666;
+    text-decoration: none;
+}
+
+.site-container {
+    width: 95%;
+    margin: 0 auto;
+    max-width: 500px;
+    text-align: center;
+}
+
+.fancy {
+    font-family: 'Rye', Georga, display, serif;
+}
+
+.site-header {
+    text-align: center;
+    padding: 1em 0;
+}
+
+a.header-logo {
+    color: red;
+    font-size: 3.5em;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+#filters a.btn-active {
+    background-color: red;
+    color: white;
+    border-color: red;
+}
+
+#friendsList {
+    margin: 1em 0;
+    padding-left: 0;
+}
+
+#friendsList li {
+    list-style: none;
+    padding-left: 0;
+    font-size: 2em;
+    line-height: 1.5;
+}
+
+#friendsList li small {
+    font-size: 0.75em;
+    color: #bbb;
+}

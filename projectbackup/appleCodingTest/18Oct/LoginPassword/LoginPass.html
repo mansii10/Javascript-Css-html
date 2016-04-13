@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+</head>
+
+<body>
+<div>
+    <h1>Welcome</h1>
+</div>
+
+<fieldset>
+    <legend>Personal information:</legend>
+
+    <div>
+        <div>
+            <h2>Create Login and Password</h2>
+        </div>
+        <form action="" onsubmit="return (passwordCheck() && DOBCheck() )">
+            <div>
+                <label>Username:</label>
+                <div>
+                    <input type="email" id="email" name="email" maxlength="56" placeholder="Enter your email address" required=""  aria-required="true" />
+                </div>
+            </div>
+            <div>
+                <label>Password:</label>
+                <div>
+                    <input aria-required="true" type="password" id="password" name="password" pattern=".{6,}" placeholder="At least 6 characters" required="" />
+                </div>
+            </div>
+            <div>
+                <label>Confirm Password:</label>
+                <div>
+                    <input type="password"  id="confirmpassword" pattern=".{6,}" name="confirmpassword" required="" aria-required="true" />
+                    <label id="confirmMessage" class=""></label>
+                </div>
+            </div>
+            <div>
+                <label> First Name:</label>
+                <div>
+                    <input type="text" id="firstname" name="firstname" maxlength="50" required="" aria-required="true" />
+                </div>
+            </div>
+            <div>
+                <label>Last Name:</label>
+                <div>
+                    <input type="text" id="lastname" name="lastname" maxlength="50" placeholder="Optional" />
+                </div>
+            </div>
+            <div>
+                <label>Birthday:</label>
+                <div>
+                    <input type="text" pattern="\d{1,2}/\d{1,2}/\d{4}" id="Birthday" name="Birthday" placeholder="MM/DD/YYYY" required="" aria-required="true" />
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button type="submit" class="btn">Sign up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="show" style="display: none">
+        <div class="row">
+            <div>
+                <h2>Please Check Your Information <span id="showname"></span></h2>
+            </div>
+            <div>
+                <form action="">
+                    <div>
+                        <span>Username:</span>
+                        <input id="email1" type="text" />
+                    </div>
+                    <div>
+                        <span>FirstName:</span>
+                        <input id="firstname1" type="text"/>
+                    </div>
+                    <div>
+                        <span>LastName:</span>
+                        <input id="lastname1" type="text" />
+                    </div>
+                    <div>
+                        <span>Birthday:</span>
+                        <input id="birthday1" type="text" />
+                    </div>
+                </form>
+            </div>
+            <div>
+                <div>
+                    <h2>Please add Aditional Information</h2>
+                </div>
+                <form>
+                    <div>
+                        <label>Aditional Information</label>
+                        <div>
+                            <input type="text" id="aboutMe" name="aboutMe" placeholder="Enter Something (optional)" />
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <button type="submit" class="btn">Add</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</fieldset>
+</body>
+
+</html>

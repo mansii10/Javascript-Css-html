@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="ToDo">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>todo</title>
+    <script src="../bower_components/../"></script>
+</head>
+<body>
+<div ng-controller="myController">
+    <form name="frm" ng-submit="addTask">
+        <input type="text" name="newTodo" ng-model="newTodo" required>
+        <button ng-disabled="frm.$invalid">Add A Task</button>
+    </form>
+    <button ng-click="removeTask()">Remove Task</button>
+    <ul>
+        <li ng-repeat="todo in todos">
+            <input type="text" ng-model="todo.done">
+            {{todo.title}}
+        </li>
+    </ul>
+</div>
+<script>
+    angular.module("ToDo", []).controller("myController",['$scope', function($scope){
+        $scope.todos = [
+            {'title':'build a todo App', 'done': false}
+        ];
+        $scope.addTask = function(){};
+        $scope.removeTask = function(){}
+    }])
+</script>
+</body>
+</html>

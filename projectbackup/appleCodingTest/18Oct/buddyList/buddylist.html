@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>My BuddyList</title>
+    <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <!-- http://tinysort.sjeiti.com/ to sort dom nodes. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinysort/2.2.2/tinysort.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+</head>
+<body>
+<div id="add-buddy-form" title="Add new buddy!">
+    <form>
+        <fieldset>
+            <table>
+                <tr>
+                    <td><label for="username">Username</label></td>
+                    <td><input type="text" name="username" id="username" placeholder="username" class="text ui-widget-content ui-corner-all"></td>
+                </tr>
+                <tr>
+                    <td><label for="firstname">Firstname</label></td>
+                    <td><input type="text" name="firstname" id="firstname" placeholder="Firstname"
+                               class="text ui-widget-content ui-corner-all"></td>
+                </tr>
+                <tr>
+                    <td><label for="lastname">Lastname</label></td>
+                    <td><input type="text" name="lastname" id="lastname" placeholder="Lastname"
+                               class="text ui-widget-content ui-corner-all"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email</label></td>
+                    <td><input type="email" name="email" id="email" placeholder="email@example.com"
+                               class="text ui-widget-content ui-corner-all"></td>
+                </tr>
+                <tr>
+                    <td><label for="dob">Date Of Birth</label></td>
+                    <td><input type="text" name="dob" id="dob" placeholder="MM/DD/YYYY"
+                               class="text ui-widget-content ui-corner-all"></td>
+                </tr>
+                <tr>
+                    <td><label for="notes">Notes</label></td>
+                    <td><input type="text" name="notes" id="notes" placeholder="About buddy"
+                               class="text ui-widget-content ui-corner-all"></td>
+                </tr>
+                <!-- Allow form submission with keyboard without duplicating the dialog button -->
+                <input type="submit" tabindex="-1" style="position:absolute; top:-1000px"/>
+            </table>
+        </fieldset>
+    </form>
+</div>
+<div id="dialog-confirm"></div>
+<div id="buddylistdiv">
+    <button id="add-buddy-button">Add Buddy</button>
+    <button id="sort-by-name-button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" onclick="sortByName()">
+        <span class="ui-button-text">Sort</span>
+    </button>
+    <br /><br />
+    <input type="text" id="searchkey" placeholder="Search name here..."></input>
+    <br /><br />
+    <ul id="buddylist">
+        <li>
+            <div class="buddytitle" onclick="showDetails(this);">
+                <span class="online" name="status">[*]</span>
+                <span name="fullname">Karishma Jain</span>
+              <span style="float:right">
+                  <button onclick="deleteBuddy(this)">x</button>
+              </span>
+            </div>
+            <div class="buddydetails">
+                <table>
+                    <tr>
+                        <td name="username">username</td>
+                        <td>Manali10</td>
+                    </tr>
+                    <tr>
+                        <td name="firstname">Firstname</td>
+                        <td>Manali</td>
+                    </tr>
+                    <td name="lastname">Lastname</td>
+                    <td>krish</td>
+                    </tr>
+                    <tr>
+                        <td name="email">Email Id</td>
+                        <td>manali@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td name="dob">Date Of Birth</td>
+                        <td>10/03/1988</td>
+                    </tr>
+                    <tr>
+                        <td name="notes">Bio</td>
+                        <td>Hi</td>
+                    </tr>
+                </table>
+            </div>
+        </li>
+        <li>
+            <div class="buddytitle" onclick="showDetails(this);">
+                <span class="offline" name="status">[*]</span>
+                <span name="fullname">Arti Shirbhate</span>
+                <span style="float:right">
+                    <button onclick="deleteBuddy(this)">x</button>
+                </span>
+            </div>
+            <div class="buddydetails">
+                <table>
+                    <tr>
+                        <td name="username">username</td>
+                        <td>huhubhu</td>
+                    </tr>
+                    <tr>
+                        <td name="firstname">Firstname</td>
+                        <td>Arti</td>
+                    </tr>
+                    <tr>
+                        <td name="lastname">Lastname</td>
+                        <td>Shirbhate</td>
+                    </tr>
+                    <tr>
+                        <td name="email">Email Id</td>
+                        <td>arti@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td name="dob">Date Of Birth</td>
+                        <td>10/02/1989</td>
+                    </tr>
+                    <tr>
+                        <td name="notes">Bio</td>
+                        <td>I am me</td>
+                    </tr>
+                </table>
+            </div>
+        </li>
+    </ul>
+</div>
+<pre>
+   * Please click on names to see additional information.
+   * You can rearrange the buddylist by dragging them.
+</pre>
+</body>
+</html>
+
+<!--Apple coding excercise-->
