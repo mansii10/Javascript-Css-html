@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style>
+        div.rectangle {
+            height: 200px;
+            width: 50px;
+            background-color: rgba(255, 0, 0, 0.5);
+            position: absolute;
+            left: calc(50% - 25px);
+            transform-origin: 50% 100%;
+        }
+        div#wraper {
+            display: inline-block;
+            height: 400px;
+            width: 400px;
+            position: relative;
+            animation: kf 2s ease infinite alternate;
+        }
+        @keyframes kf {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var wraper = document.querySelector('#wraper');
+            for (var i = 0, len = 20; i < len; i++) {
+                var div = document.createElement('div');
+                div.className = 'rectangle';
+                div.style.transform = 'rotate(' + i * 18 + 'deg)';
+                wraper.appendChild(div);
+            }
+        });
+    </script>
+</head>
+<body>
+<div id="wraper"></div>
+</body>
+</html>

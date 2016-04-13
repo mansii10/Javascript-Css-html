@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            height: 100vh;
+            background-color: #ff1d0f;
+            perspective: 600px;
+        }
+        #box {
+            left: 100vh;
+            top: 25vh;
+            position: absolute;
+            transform-origin: 0px 0px -100px;
+            transform-style: preserve-3d;
+
+
+        }
+
+        div.spin {
+            animation: spinner 4s infinite linear;
+        }
+        #box, div {
+            height: 200px;
+            width: 200px;
+            border: #4b4dff;
+            border-radius: 2px;
+            transition:all 2s ease-in-out;
+            transform-origin: 50% 50% 0px;
+            position: absolute;
+            font-size: 30px;
+            text-align: center;
+            line-height: 200px;
+        }
+
+        div.front {
+            transform: translateZ(100px);
+            background-color: rgba(255, 155, 62, 0.50);
+            transform-origin: 0 0 -100px;
+        }
+        div.back {
+            transform: translateZ(-100px);
+            background-color: rgba(110, 255, 29, 0.50);
+            transform-origin: 0 0 100px;
+        }
+        div.bottom {
+            transform: rotateX(90deg) translateZ(-100px);
+            background-color: rgba(200, 33, 255, 0.50);
+            transform-origin: 0 100px 0px;
+        }
+        div.top {
+            transform-origin: 100px;
+            transform: rotateX(90deg) translateZ(100px);
+            background-color: rgba(0,255,255,0.5);
+        }
+        div.left {
+            transform-origin: 100px 0 0px;
+            transform: rotateY(90deg) translateZ(-100px);
+            background-color: rgba(51, 188, 12, 0.50);
+        }
+        div.right {
+            transform-origin: 100px 0 0px;
+            transform: rotateY(90deg) translateZ(100px);
+            background-color: rgba(150,4,255,0.5);
+        }
+        @keyframes spinner {
+            from {
+                transform: rotateX(0deg);
+            }
+            to {
+                transform: rotateX(360deg);
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded',function () {
+            div = document.querySelector('#box');
+            document.body.addEventListener('click', function () {
+                div.classList.toggle('spin');
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="box">
+    <div class="front">M</div>
+    <div class="back">A</div>
+    <div class="top">N</div>
+    <div class="bottom">S</div>
+    <div class="left">I</div>
+    <div class="right">S</div>
+</div>
+
+</body>
+</html>

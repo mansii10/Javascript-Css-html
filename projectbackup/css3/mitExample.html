@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .container{
+            height:200px;
+            width:200px;
+            position:relative;
+            perspective: 100px;
+        }
+        #cube{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+        }
+        #cube div {
+            width: 196px;
+            height: 196px;
+            display: block;
+            position: absolute;
+            border: 2px solid red;
+        }
+        #cube .front  { transform: rotateY(   0deg ); }
+        #cube .back   { transform: rotateX( 180deg ); }
+        #cube .right  { transform: rotateY(  90deg ); }
+        #cube .left   { transform: rotateY( -90deg ); }
+        #cube .top    { transform: rotateX(  90deg ); }
+        #cube .bottom { transform: rotateX( -90deg ); }
+
+        #cube .front  { transform: rotateY(   0deg ) translateZ( 100px ); }
+        #cube .back   { transform: rotateX( 180deg ) translateZ( 100px ); }
+        #cube .right  { transform: rotateY(  90deg ) translateZ( 100px ); }
+        #cube .left   { transform: rotateY( -90deg ) translateZ( 100px ); }
+        #cube .top    { transform: rotateX(  90deg ) translateZ( 100px ); }
+        #cube .bottom { transform: rotateX( -90deg ) translateZ( 100px ); }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="cube">
+        <div class="front">1</div>
+        <div class="back">2</div>
+        <div class="right">3</div>
+        <div class="left">4</div>
+        <div class="top">5</div>
+        <div class="bottom">6</div>
+    </div>
+</div>
+
+</body>
+</html>

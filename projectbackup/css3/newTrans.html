@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        var div = document.querySelector('div');
+
+        div.addEventListener('click', function(){
+        var currPos = 0;
+            var towardsRight = true;
+            var bounds = {
+                left: 300,
+                right: 300
+            }
+            var currAngle =0;
+            var currScale =1;
+            var expand = true;
+            var expandBound = 2;
+
+            function updateTransform(){
+                div.style.transform ='translate(' +currPos + 'px) rotate(' + currAngle + 'deg) scale(' +currScale +')';
+            }
+
+            function updatePosition(){
+
+                if (towardsRight){
+                    currPos++;
+                    if (currPos > bounds.right) {
+                        currPos = bounds.right;
+                        towardsRight = false;
+                    } else {
+                        updateTransform();
+                    }
+                } else {
+                    currPos--;
+                    if (currPos < bounds.left) {
+                        currPos = bounds.left;
+                        towardsRight = true;
+                    } else {
+                        updateTransform();
+                    }
+                }
+            }
+
+
+            function updateAngle(){
+                currAngle++;
+                currAngle = currAngle > 360 ? 1 :currAngle;
+                updateTransform();
+            }
+
+            function updateScale() {
+                if (expand) {
+                    currScale += 0.01;
+                    if (currScale > expandBound) {
+                        currScale = expandBound;
+                        expand = false;
+                    } else {
+                        updateTransform();
+                    }
+                } else {
+                    currScale -= 0.01;
+                    if (currScale < 1) {
+                        currScale = 1;
+                        expand = true;
+                    } else {
+                        updateTransform();
+                    }
+                }
+            }
+            setInterval(updatePosition, 10);
+            setInterval(updateAngle, 10);
+            setInterval(updateScale, 10);
+        });
+    });
+</script>
+<style>
+    div {
+        height:200px;
+        width: 200px;
+        margin:100px auto;
+        background-color: red;
+
+
+        /*transform: rotate(45deg);*/
+    }
+
+</style>
+<body>
+<div></div>
+
+</body>
+</html>
+
+<!--todo: start rotating the square on mouseenter and stop roatating on movuse leave //-->
+<!--what toggle do? to keep code simple-->
+<!--make a new class .makeDarker and changed to darker color-->

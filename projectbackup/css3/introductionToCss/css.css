@@ -1,0 +1,24 @@
+section{
+    position: relative;
+    background-color: red;
+    height: 120px;
+    width:120px;
+    border-radius: 50%;
+ }
+
+div{
+    margin: 10px;
+    height: 100px;
+    width: 100px;
+    background-color: purple;
+    position: absolute;
+    border-radius: 50%;
+
+}
+div > div {
+    background-color: brown;
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+}

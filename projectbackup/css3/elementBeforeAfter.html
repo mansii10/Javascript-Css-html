@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        header::first-letter{
+            color:green;
+            font-size:30px;
+            text-shadow: 0 0 5px red;
+            font-family: "Consolas", "Menlo", "Courier";
+        }
+        p::first-line{
+            color:red;
+        }
+        p::before, p::after{
+            content:'+';
+            text-align:center;
+            display:block;
+            background-color: blue;
+            line-height:2em;
+            width:2em;
+            margin:1em;
+            font-size:2em;
+            color:white:
+        }
+        p::after{
+            content:'-';
+        }
+
+        input::-moz-selection{
+            background: chartreuse;
+        }
+    </style>
+</head>
+<body>
+<header>This is header</header>
+<p> Here is paragraph.Here is paragraph.<br />Here is paragraph.</p>
+<input type="text" value="info">
+
+</body>
+</html>
+
+<!--Study:new partial attribute selector-->

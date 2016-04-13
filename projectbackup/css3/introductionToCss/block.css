@@ -1,0 +1,29 @@
+
+body{
+    height: 100em;
+}
+
+div {
+    background-color:green;
+    height: 100px;
+    width: 100px;
+    margin: 12px;
+    float: left;
+
+    }
+
+div:hover{
+    background-color: brown;
+
+}
+
+section {
+    border: 1px dashed red;
+    padding: 12px;
+    overflow: auto;
+}
+
+
+/*transperent is property of background color
+position fixed: positio
+*/

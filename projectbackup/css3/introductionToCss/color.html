@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function Color(){
+            this.components = [0, 0, 0].map(function () {
+                return Math.floor(Math.random()* 225);
+            });
+        }
+
+        Color.prototype.toRGBString = function(){
+            return 'rgb(' + this.components.join(', ') + ')';
+
+        };
+
+        color.prototype.rgbDarken = function(){
+            this.components.map(function (componet)){
+                if(component !==0) {
+                    component -= 10;
+                    component = component < 0 ? 0 : component;
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function(){
+            document.querySelector('div').addEventListener('click', function(){
+                var color = new Color();
+                this.style.backgroundColor = color.toRGBString();
+                console.log(color)
+
+
+            });
+        });
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        @keyframes chgBg {
+            from{background-color: blue;}
+            to{background-color:red; }
+
+        }
+        @-moz-keyframes chgBg {
+            from{background-color: red;}
+            to{background-color: blue;}
+        }
+        .wraper{
+            border:1px solid black;
+            width: 300px;
+            height:300px;
+            position:relative;
+        }
+        .animation{
+            animation: chgBg 5s;
+            -moz-animation: chgBg 5s;
+            position: absolute;
+            border-radius: 20px;
+            background-color: blue;
+            width:150px;
+            padding:15px;
+            text-align: center;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+<div class="wraper">
+        <div class="animation">Testing</div>
+</div>
+
+</body>
+</html>

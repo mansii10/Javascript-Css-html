@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        button {
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input {
+            width: 50px;
+            text-align: right;
+        }
+        .container {
+            background-color: blue;
+        }
+        .circle {
+            width: 25px;
+            height: 25px;
+            border-radius: 13px;
+            background-color: red;
+            text-align: center;
+            vertical-align: center;
+            display: inline-block;
+        }
+        .blank-box {
+            width: 10px;
+            display: inline-block;
+        }
+        .float-break {
+            clear: both;
+        }
+        .blank-circle {
+            width: 25px;
+            height: 25px;
+            border-radius: 13px;
+            -background-color: green;
+            color: white;
+            text-align: center;
+            vertical-align: center;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<span class="blank-box"></span>
+<input id="num1" ></input>
+<span id="circle-container-1">
+    <span class="circle">1</span>
+    <span class="circle">2</span>
+    <span class="circle">3</span>
+    <span class="circle">4</span>
+    <span class="circle">5</span>
+    <span class="blank-circle">6</span>
+    <span class="blank-circle">7</span>
+    <span class="blank-circle">8</span>
+    <span class="blank-circle">9</span>
+    <span class="blank-circle">10</span>
+</span>
+<div></div>
+<span class="blank-box">+</span>
+<input id="num2" align="left"></input>
+<span id="circle-container-2">
+    <span class="circle">1</span>
+    <span class="circle">2</span>
+    <span class="circle">3</span>
+    <span class="circle">4</span>
+    <span class="blank-circle">5</span>
+    <span class="blank-circle">6</span>
+    <span class="blank-circle">7</span>
+    <span class="blank-circle">8</span>
+    <span class="blank-circle">9</span>
+    <span class="blank-circle">10</span>
+</span>
+<hr />
+<div class="float-break">
+</div>
+<span class="blank-box"></span>
+<input id="ans" value="***"></input>
+<span id="circle-container-ans">
+    <span class="blank-circle">1</span>
+    <span class="blank-circle">2</span>
+    <span class="blank-circle">3</span>
+    <span class="blank-circle">4</span>
+    <span class="blank-circle">5</span>
+    <span class="blank-circle">6</span>
+    <span class="blank-circle">7</span>
+    <span class="blank-circle">8</span>
+    <span class="blank-circle">9</span>
+    <span class="blank-circle">10</span>
+</span>
+<div>
+    <button id="ansButton">Show Answer</button>
+    <button id="checkButton">Check Answer</button>
+    <button id="resetButton">Reset Question</button>
+</div>
+
+
+
+
+</body>
+</html>

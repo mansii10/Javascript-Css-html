@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        var div = document.querySelector('div');
+        rotateOnClick();
+        div.addEventListener('click', function(){
+            div.style.transform = 'translate(100px)'; /*rotate directly to 45deg*/
+
+            var currAngle = 0;
+            var intervalid = setInterval(function(){
+                currAngle++;
+                if(currAngle > 45) {
+                    clearInterval(intervalid);
+                }
+                else {
+                    div.style.transform = 'rotate(' + currAngle + 'deg)'
+                }
+
+            }, 100)
+        });
+
+    });
+
+</script>
+<style>
+    div {
+        height:200px;
+        width: 200px;
+        margin:100px auto;
+        background-color: red;
+
+
+        /*transform: rotate(45deg);*/
+    }
+
+</style>
+<body>
+<div></div>
+
+</body>
+</html>
+
+<!--todo: start roatating the square on mouseenter and stop roatating on movuse leave //-->

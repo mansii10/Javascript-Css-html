@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            height:200px;
+            width: 200px;
+            margin:100px auto;
+            background-color: red;
+            transition: background-color 500ms ease;
+
+        }
+
+        div.makeDarker{
+            background-color: darkred ;
+            transition: background-color 500ms ease ;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            var div = document.querySelector('div');
+            div.addEventListener('click', function(){
+                div.classList.toggle('makeDarker')
+            });
+        });
+    </script>
+</head>
+<body>
+<div></div>
+
+</body>
+</html>
+
+<!--Easing - www.cubic-bezier.com/#.11,.76,1,.19-->
+<!--transition - is animation who's starting part is already define-->
+<!--keyframes-->
+<!--define an animation-->

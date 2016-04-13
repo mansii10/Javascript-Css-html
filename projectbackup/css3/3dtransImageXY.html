@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            perspective: 300px;
+            transform-style: preserve-3d;
+
+        }
+        div{
+
+            height: 100px;
+            width: 100px;
+            transition: transform 500ms ease;
+            margin: 100px auto;
+
+            background-image: url('images/Mona_Lisa_face_800x800px.jpg');
+            background-size: cover;
+
+            transform-origin: 0% 0%;
+
+
+        }
+         .rotate-x {
+             transform:rotateX(45deg);
+             transition: transform 500ms ease;
+         }
+        .rotate-y{
+            transform:rotateY(45deg);
+            transition: transform 500ms ease;
+        }
+        .rotate-z{
+            transform:rotateX(45deg);
+            transition: transform 500ms ease;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            var buttons = Array.prototype.slice.call(document.querySelectorAll('button'));
+            var classes = ['rotate-x', 'rotate-y', 'rotate-z'];
+
+            var div = document.querySelector('div');
+            for(var i= 0,len = buttons.length; i < len; i++){
+                buttons[i].addEventListener('click', function(){
+                    var indexOfButton = buttons.indexOf(this);
+                    console.log(indexOfButton);
+                    console.log(classes[indexOfButton]);
+                    div.classList.toggle(classes[indexOfButton]);
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+<div >
+
+</div>
+    <button> Rotate along X</button>
+    <button> Rotate Along Y</button>
+    <button> Rotate Along Z</button>
+</body>
+</html>
+<!--Css Practice-->

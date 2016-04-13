@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background: chartreuse;
+        }
+        #cube div{
+            position:absolute;
+            width:120px;
+            height:120px;
+            border: 1px solid #aaaaaa;
+            background-color: indianred;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            line-height:120px;
+            font-size:100px;
+
+        }
+
+        #cube .one {transform: translateZ(60px);}
+        #cube .two {transform: rotateY(90deg) translateZ(60px);}
+        #cube .three { rotateY(90deg) rotateX(90deg) translateZ(60px);}
+        #cube .four { rotateY(180deg) rotateX(90deg) translateZ(60px);}
+        #cube .five { rotateY(-90deg) rotateX(90deg) translateZ(60px);}
+        #cube .six { rotateX(-90deg) translateZ(60px);}
+        
+        @keyframes spin {
+            from,to{}
+            16% {transform: rotateY(-90deg);}
+            33% {transform: rotateY(-90deg) rotateZ(90deg);}
+            50% {transform: rotateY(180deg) rotateZ(90deg);}
+            66% {transform: rotateY(-90deg) rotateZ(90deg);}
+            83% {transform: rotateX(90deg);}
+        }
+        #cube{
+            animation: spin;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-duration: 12s;
+            transform-style: preserve-3d;
+            transform-origin: 60px 60px 0;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div id="first" width:120px; height:120px>
+    <div id="cube">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+        <div class="four">4</div>
+        <div class="five">5</div>
+        <div class="six">6</div>
+    </div>
+</div>
+</body>
+</html>

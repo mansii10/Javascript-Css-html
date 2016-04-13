@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            perspective: 300px;
+            transform-style: preserve-3d;
+        }
+        #container, #flap {
+            height: 150px;
+            width: 150px;
+            background-color: rgba(255, 0, 0, 0.69);
+            transform-style: preserve-3d;
+        }
+        div.reset {
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            transition: transform 500ms ease;
+        }
+        #container {
+            margin: 150px auto;
+            background-color: rgba(0, 128, 0, 0.64);
+            transform-origin: 0% 0%;
+            transform-style: preserve-3d;
+        }
+        #flap {
+
+            transform-origin: 0% 0%;
+        }
+        .animate-container {
+            animation: container-frames 1s ease 1 normal;
+            animation-fill-mode: forwards;
+        }
+        .animate-container > #flap {
+            animation: door-frames 1s ease 1s 1 normal;
+            animation-fill-mode: forwards;
+        }
+        @keyframes container-frames {
+            0% { transform: rotateY(0deg); }
+            50% { transform: rotateY(45deg); }
+            100%{ transform: rotateY(45deg) rotateX(45deg); }
+        }
+        @keyframes door-frames {
+            0% { transform: rotateX(0deg); }
+            100% { transform: rotateY(-45deg); }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var div = document.querySelector('div');
+            div.addEventListener('click', function () {
+                this.classList.toggle('animate-container');
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="container" class="reset">
+    <div id="flap">
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<style>
+    .dummy{
+        height:600px;
+        width:200px;
+        background-color: red;
+        margin:1em;
+
+    }
+    #div1{
+        margin:1em;
+        background-color: blue;
+    }
+
+    #div1:target{
+        background-color: green;
+        transition: all 2s ease;
+    }
+</style>
+<body>
+<a href="#div1"> go to link 1</a>
+<div class="dummy" ></div>
+<div id="div1">this is div</div>
+</body>
+</html>
